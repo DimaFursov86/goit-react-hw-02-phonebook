@@ -1,0 +1,15 @@
+.contactList {
+  display: flex;
+  flex-direction: column;
+}
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contactItemText:not(:last-child) {
+  margin-right: 20px;
+}
+.buttons {
+  margin-right: auto;
+}
