@@ -5,6 +5,7 @@ import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
 import Filter from './components/Filter';
 import contacts from './contacts.json';
+import s from './App.module.scss';
 
 class App extends Component {
   state = {
@@ -49,7 +50,7 @@ class App extends Component {
 
     return (
       <Section>
-        <div>
+        <div className={s.box}>
           <h1>Phonebook</h1>
           <ContactForm onSubmit={this.addContact} />
 

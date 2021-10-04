@@ -1,4 +1,4 @@
-import s from './ContactList.module.css';
+import s from './ContactList.module.scss';
 
 export default function ContactList({ contacts, onDeleteContact }) {
   return (
@@ -12,7 +12,7 @@ export default function ContactList({ contacts, onDeleteContact }) {
             className={s.contactItemText}
             onClick={() => onDeleteContact(id)}
           >
-            Удалить
+            Delete
           </button>
         </li>
       ))}
