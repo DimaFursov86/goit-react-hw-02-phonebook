@@ -14,15 +14,21 @@ class App extends Component {
   };
 
   addContact = ({ name, number }) => {
-    const contact = {
-      id: shortid.generate(),
-      name,
-      number,
-    };
+    const nameArr = this.getVisibleContacts();
+    const existName = nameArr.map(obj => obj.name);
+    if (existName.includes(name)) {
+      alert(`${name} is already in contacts`);
+    } else {
+      const contact = {
+        id: shortid.generate(),
+        name,
+        number,
+      };
 
-    this.setState(({ contacts }) => ({
-      contacts: [contact, ...contacts],
-    }));
+      this.setState(({ contacts }) => ({
+        contacts: [contact, ...contacts],
+      }));
+    }
   };
 
   deleteContact = contactId => {

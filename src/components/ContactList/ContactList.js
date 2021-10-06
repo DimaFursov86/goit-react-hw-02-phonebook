@@ -1,21 +1,23 @@
 import s from './ContactList.module.scss';
-
+import ContactItem from '../ContactItem';
+import PropTypes from 'prop-types';
 export default function ContactList({ contacts, onDeleteContact }) {
   return (
     <ul className={s.contactList}>
       {contacts.map(({ id, name, number }) => (
-        <li key={id} className={s.contactItem}>
-          <p className={s.contactItemText}>{name}</p>
-          <p className={s.contactItemText}>{number}</p>
-          <button
-            type="button"
-            className={s.contactItemText}
-            onClick={() => onDeleteContact(id)}
-          >
-            Delete
-          </button>
+        <li key={id}>
+          <ContactItem
+            id={id}
+            name={name}
+            number={number}
+            onDeleteContact={onDeleteContact}
+          />
         </li>
       ))}
     </ul>
   );
 }
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};

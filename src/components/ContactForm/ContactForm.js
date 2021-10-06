@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-import shortid from 'shortid';
 import s from './ContactForm.module.scss';
+
 class Form extends Component {
   state = {
     name: '',
     number: '',
   };
-
-  nameInputId = shortid.generate();
-  tagInputId = shortid.generate();
 
   handleChange = e => {
     const { name, value } = e.currentTarget;
